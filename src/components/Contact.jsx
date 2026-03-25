@@ -4,15 +4,37 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '', email: '', phone: '', company: '', service: '', budget: '', details: '',
     })
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        alert('Thank you! Your message has been sent. We will get back to you within 2 business hours.')
-        setFormData({ name: '', email: '', phone: '', company: '', service: '', budget: '', details: '' })
+        setIsLoading(true)
+
+        // --- GOOGLE SHEETS INTEGRATION ---
+        // Replace this URL with your actual Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx4dn0MHmf5psamib7nZCPI4HCEIQ61vbwi-ERYJGdNpMNA_wweUP4fYgUjISTudo8/exec'
+
+        try {
+            await fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(e.target),
+            })
+
+            alert('Data successfully saved!')
+            setFormData({
+                name: '', email: '', phone: '', company: '',
+                service: '', budget: '', details: ''
+            })
+        } catch (error) {
+            console.error(error)
+            alert('Error submitting form')
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -104,7 +126,9 @@ const Contact = () => {
                         <label htmlFor="details">Project Details *</label>
                         <textarea id="details" name="details" placeholder="Tell us about your project, goals, and timeline..." value={formData.details} onChange={handleChange} required />
                     </div>
-                    <button type="submit" className="submit-btn">🚀 Send My Request — It's Free!</button>
+                    <button type="submit" className="submit-btn" disabled={isLoading}>
+                        {isLoading ? '⏳ Sending...' : "🚀 Send My Request — It's Free!"}
+                    </button>
                 </form>
             </div>
         </section>
