@@ -1,16 +1,90 @@
-# React + Vite
+# BMV Software
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive corporate website built with React and Vite. This project showcases the company's services, tech stack, portfolio, and process, acting as a complete landing page with smooth scroll animations and an interactive user interface.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI/UX:** Clean, professional, and visually appealing design.
+- **Responsive Layout:** Works seamlessly across desktops, tablets, and mobile devices.
+- **Smooth Animations:** Built-in scroll reveals and dynamic components.
+- **Comprehensive Sections:** Includes Hero, Services, About Us, Tech Stack, Portfolio, Pricing, Reviews, FAQ, and Contact.
+- **Interactive Elements:** Fixed Navigation, Topbar, Ticker, WhatsApp Floating Action Button, and a Back-To-Top button.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Frontend Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** Vanilla CSS (Modular and scalable structure)
+- **Linting:** ESLint
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd bmv-software
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To start the local development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
+```
+
+The compiled assets will be generated in the `dist` folder, ready for deployment.
+
+### Previewing the Production Build
+
+To preview the built application locally:
+
+```bash
+npm run preview
+```
+
+## 📂 Project Structure
+
+```text
+bmv-software/
+├── public/               # Static assets
+├── src/
+│   ├── assets/           # Images, icons, and other media
+│   ├── components/       # Reusable React components (Hero, Navbar, Services, etc.)
+│   ├── App.jsx           # Main application entry component
+│   ├── index.css         # Global styles and variables
+│   └── main.jsx          # React DOM rendering entry point
+├── index.html            # Main HTML template
+├── package.json          # Project metadata and dependencies
+└── vite.config.js        # Vite configuration
+```
+
+## 🎨 Customization
+
+The project uses vanilla CSS for styling, with main styles defined in `src/index.css`. Component-specific styles may be colocated within the `components/` directory or organized in dedicated CSS files. You can easily tweak color palettes, typography, and spacing by modifying the CSS variables.
+
+## 📄 License
+
+This project is proprietary and confidential. Unauthorized copying of files, via any medium, is strictly prohibited.

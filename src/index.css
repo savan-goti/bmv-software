@@ -359,6 +359,9 @@ footer ul li a:hover{color:var(--accent);}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .process-steps{grid-template-columns:repeat(3,1fr);}
   .process-line{display:none;}
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-info{order:2;}
+  .contact-form{order:1;}
 }
 @media(max-width:768px){
   .topbar{display:none;}
