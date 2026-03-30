@@ -54,15 +54,15 @@ const Contact = () => {
                     </p>
                     <div className="c-item">
                         <div className="c-icon">📍</div>
-                        <div><strong>Office Address</strong><span>123 Tech Park, Sector 18, Noida, UP – 201301, India</span></div>
+                        <div><strong>Office Address</strong><span>Shop No.01 Golden Ashtha Karanjade sector R3 Navi Mumbai 410206</span></div>
                     </div>
                     <div className="c-item">
                         <div className="c-icon">📞</div>
-                        <div><strong>Phone / WhatsApp</strong><span>+91 98765 43210</span></div>
+                        <div><strong>Phone / WhatsApp</strong><span>+91 93228 01354 / +91 76001 10159</span></div>
                     </div>
                     <div className="c-item">
                         <div className="c-icon">✉️</div>
-                        <div><strong>Email Us</strong><span><a href="mailto:info@bmvsoftware.com">info@bmvsoftware.com</a></span></div>
+                        <div><strong>Email Us</strong><span><a href="mailto:info@lyrovix.com">info@lyrovix.com</a></span></div>
                     </div>
                     <div className="c-item">
                         <div className="c-icon">⏰</div>
@@ -91,7 +91,7 @@ const Contact = () => {
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="phone">Phone / WhatsApp</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" value={formData.phone} onChange={handleChange} />
+                            <input type="tel" id="phone" name="phone" placeholder="+91 93228 01354" value={formData.phone} onChange={handleChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="company">Company Name</label>

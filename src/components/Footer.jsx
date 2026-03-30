@@ -53,15 +53,15 @@ const Footer = () => {
                     <ul>
                         <li>
                             <span>📍</span>
-                            123 Tech Park, Sector 18, Noida, UP 201301
+                            Shop No.01 Golden Ashtha Karanjade sector R3 Navi Mumbai 410206
                         </li>
                         <li>
                             <span>📞</span>
-                            +91 98765 43210
+                            +91 93228 01354 / +91 76001 10159
                         </li>
                         <li>
                             <span>✉️</span>
-                            info@bmvsoftware.com
+                            info@lyrovix.com
                         </li>
                         <li>
                             <span>⏰</span>
