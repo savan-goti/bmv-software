@@ -57,7 +57,11 @@ const Footer = () => {
                         </li>
                         <li>
                             <span>📞</span>
-                            +91 93228 01354 / +91 76001 10159
+                            Mobile: <a href="tel:+919322801354">+91 93228 01354</a>
+                        </li>
+                        <li>
+                            <span>💬</span>
+                            WhatsApp: <a href="https://wa.me/917600110159" target="_blank" rel="noopener noreferrer">+91 76001 10159</a>
                         </li>
                         <li>
                             <span>✉️</span>

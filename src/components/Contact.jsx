@@ -58,7 +58,11 @@ const Contact = () => {
                     </div>
                     <div className="c-item">
                         <div className="c-icon">📞</div>
-                        <div><strong>Phone / WhatsApp</strong><span>+91 93228 01354 / +91 76001 10159</span></div>
+                        <div><strong>Mobile Number</strong><span><a href="tel:+919322801354">+91 93228 01354</a></span></div>
+                    </div>
+                    <div className="c-item">
+                        <div className="c-icon">💬</div>
+                        <div><strong>WhatsApp</strong><span><a href="https://wa.me/917600110159" target="_blank" rel="noopener noreferrer">+91 76001 10159</a></span></div>
                     </div>
                     <div className="c-item">
                         <div className="c-icon">✉️</div>

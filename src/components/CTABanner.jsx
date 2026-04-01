@@ -5,7 +5,7 @@ const CTABanner = () => {
             <p>Join 500+ businesses that trust BMV Software Solution for their digital success. Get a free consultation and custom quote today — no strings attached!</p>
             <div className="cta-btns">
                 <a href="#contact" className="btn btn-primary">🚀 Get Free Consultation</a>
-                <a href="tel:+919876543210" className="btn btn-white">📞 Call Us Now</a>
+                <a href="tel:+919322801354" className="btn btn-white">📞 Call Us Now</a>
             </div>
         </section>
     )
