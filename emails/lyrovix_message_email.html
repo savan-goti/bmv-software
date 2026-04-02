@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Lead Received – Lyrovix</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* Base & Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0f172a;
+      /* Sophisticated deep navy background */
+      font-family: 'Poppins', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #1e293b;
+    }
+
+    .wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #7c3aed 100%);
+      border-radius: 24px 24px 0 0;
+      padding: 40px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    /* Background Decoration */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .brand-rocket-container {
+      background: rgba(255, 255, 255, 0.15);
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .brand-info {
+      line-height: 1;
+    }
+
+    .brand-text {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .header-tag {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .header-title-box {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .title-bell {
+      font-size: 28px;
+      background: #fbbf24;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+    }
+
+    .header-title-box h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      margin: 0;
+    }
+
+    /* ── Body card ── */
+    .card {
+      background: #ffffff;
+      padding: 40px 32px;
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .greeting {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      font-size: 15px;
+      color: #64748b;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .intro strong {
+      color: #6366f1;
+    }
+
+    /* Modern Banner */
+    .banner {
+      background: linear-gradient(120deg, #f5f3ff 0%, #fff1f2 100%);
+      border-radius: 18px;
+      margin-bottom: 32px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border: 1px solid #ede9fe;
+    }
+
+    .banner-item {
+      text-align: center;
+      background: #fff;
+      padding: 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      min-width: 70px;
+    }
+
+    .banner-icon {
+      font-size: 24px;
+    }
+
+    /* Section styling */
+    .section {
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .section-header {
+      font-size: 13px;
+      font-weight: 800;
+      color: #6366f1;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header span {
+      font-size: 18px;
+      color: #1e293b;
+    }
+
+    .fields-group {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .field-ico {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+
+    .ico-purple {
+      background: #f5f3ff;
+      color: #7c3aed;
+    }
+
+    .ico-blue {
+      background: #eff6ff;
+      color: #3b82f6;
+    }
+
+    .ico-green {
+      background: #f0fdf4;
+      color: #22c55e;
+    }
+
+    .ico-gray {
+      background: #f8fafc;
+      color: #64748b;
+    }
+
+    .field-content {
+      flex: 1;
+    }
+
+    .field-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .field-value {
+      font-size: 14px;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Long text box for details */
+    .detail-box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.7;
+      border: 1px solid #f1f5f9;
+    }
+
+    /* Action bar */
+    .action-card {
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 32px;
+      text-align: left;
+      box-shadow: 0 10px 20px rgba(67, 56, 202, 0.2);
+    }
+
+    .action-header {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .action-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+    }
+
+    .priority-item {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 99px;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .priority-dot {
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      margin-right: 8px;
+      box-shadow: 0 0 8px #ef4444;
+    }
+
+    /* Footer / CTA row */
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .regards {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .regards strong {
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #6366f1, #4338ca);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+      white-space: nowrap;
+    }
+
+    /* Bottom Contact Bar */
+    .bottom-bar {
+      margin-top: 24px;
+      background: #1e1b4b;
+      border-radius: 18px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .bottom-logo {
+      font-weight: 900;
+      color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .contact-badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 8px 14px;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header {
+        padding: 30px 20px 20px;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="brand">
+        <div class="brand-rocket-container">🚀</div>
+        <div class="brand-info">
+          <div class="brand-text">Lyrovix</div>
+          <span class="brand-sub">Technology</span>
+        </div>
+        <div class="header-tag">Website System</div>
+      </div>
+
+      <div class="header-title-box">
+        <div class="title-bell">🔔</div>
+        <h1>New Project Inquiry Received</h1>
+      </div>
+    </div>
+
+    <!-- MAIN BODY -->
+    <div class="card">
+      <p class="greeting">Hello Admin,</p>
+      <p class="intro">You have a new lead from the <strong>Lyrovix</strong> official website. Here are the submission
+        details:</p>
+
+      <!-- Banner Icons -->
+      <!-- <div class="banner">
+        <div class="banner-item">
+          <div class="banner-icon">⚙️</div>
+        </div>
+        <div class="banner-item">
+          <div class="banner-icon">📣</div>
+        </div>
+        <div class="banner-item">
+          <div class="banner-icon">🔔</div>
+        </div>
+      </div> -->
+
+      <!-- Lead Information -->
+      <div class="section">
+        <div class="section-header"><span>✉️</span> Lead Information</div>
+        <div class="fields-group">
+          <div class="field">
+            <div class="field-ico ico-purple">👤</div>
+            <div class="field-content">
+              <span class="field-label">FullName</span>
+              <span class="field-value">[Client Name]</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-ico ico-blue">✉️</div>
+            <div class="field-content">
+              <span class="field-label">Email Address</span>
+              <span class="field-value">[Email Address]</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-ico ico-green">📞</div>
+            <div class="field-content">
+              <span class="field-label">Phone / WhatsApp</span>
+              <span class="field-value">[Phone Number]</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-ico ico-gray">🏢</div>
+            <div class="field-content">
+              <span class="field-label">Company Name</span>
+              <span class="field-value">[Company Name]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requirement Details -->
+      <div class="section">
+        <div class="section-header"><span>💼</span> Project Requirements</div>
+        <div class="fields-group">
+          <div class="field">
+            <div class="field-ico ico-purple">💼</div>
+            <div class="field-content">
+              <span class="field-label">Service Required</span>
+              <span class="field-value">[Selected Service]</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-ico ico-blue">💰</div>
+            <div class="field-content">
+              <span class="field-label">Project Budget</span>
+              <span class="field-value">[Budget Range]</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <span class="field-label" style="margin-bottom: 8px; display: block;">Message & Details:</span>
+          <div class="detail-box">[Full Message]</div>
+        </div>
+      </div>
+
+      <!-- Action Required Bar -->
+      <div class="action-card">
+        <div class="action-header">⚡ Action Required</div>
+        <div class="action-text">Please initiate contact with the client within <strong>24 hours</strong> to ensure
+          optimal lead conversion.</div>
+
+        <div class="priority-item">
+          <div class="priority-dot"></div>
+          Priority: [High / Medium / Low]
+        </div>
+      </div>
+
+      <!-- Regards & CTA -->
+      <!-- <div class="footer-row">
+        <div class="regards">
+          Best Regards,<br />
+          <strong>Lyrovix Software Team</strong>
+        </div>
+        <a href="https://lyrovix.com/admin" class="cta-button">View Lead In Dashboard</a>
+      </div> -->
+
+      <!-- Bottom Bar -->
+      <div class="bottom-bar">
+        <div class="bottom-logo">🚀 LYROVIX</div>
+        <div class="contact-links">
+          <a href="https://wa.me/917600110159" class="contact-badge">📱 WhatsApp</a>
+          <a href="mailto:info@lyrovix.com" class="contact-badge">✉️ Email</a>
+        </div>
+      </div>
+
+    </div><!-- /card -->
+  </div><!-- /wrapper -->
+</body>
+
+</html>

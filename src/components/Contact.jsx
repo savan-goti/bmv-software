@@ -15,23 +15,54 @@ const Contact = () => {
         setIsLoading(true)
 
         // --- GOOGLE SHEETS INTEGRATION ---
-        // Replace this URL with your actual Google Apps Script Web App URL
         const scriptURL = 'https://script.google.com/macros/s/AKfycbx4dn0MHmf5psamib7nZCPI4HCEIQ61vbwi-ERYJGdNpMNA_wweUP4fYgUjISTudo8/exec'
 
+        // --- SMTP PHP BACKEND ---
+        // Automatic local vs live detection
+        const isLocal = window.location.hostname === 'localhost'
+
+        const phpURL = isLocal
+            ? 'http://localhost:8000/php/send_email.php'
+            : 'https://lyrovix.com/php/send_email.php'
+
+        const formData = new FormData(e.target);
+
         try {
+            // Send to Google Sheets (Original)
             await fetch(scriptURL, {
                 method: 'POST',
-                body: new FormData(e.target),
+                body: formData,
             })
 
-            alert('Data successfully saved!')
+            // Send via SMTP (New)
+            const phpRes = await fetch(phpURL, {
+                method: 'POST',
+                body: formData,
+            })
+
+            // Check if the response is valid JSON (handles cases where PHP is not running locally)
+            const contentType = phpRes.headers.get("content-type");
+            if (contentType && contentType.indexOf("application/json") !== -1) {
+                const phpData = await phpRes.json();
+                if (phpData.status === 'success') {
+                    alert('Success! Your message has been sent to savansoftware8@gmail.com.');
+                } else {
+                    alert('Log saved, but email failed: ' + phpData.message);
+                }
+            } else {
+                // If it's not JSON, it means PHP is not running on this server/port yet.
+                // We show success for Google Sheets only for now.
+                alert('Success! Your message has been saved in our system.');
+                console.warn('Note: SMTP Email will only work when you deploy this to a PHP server.');
+            }
+
             setFormData({
                 name: '', email: '', phone: '', company: '',
                 service: '', budget: '', details: ''
             })
         } catch (error) {
             console.error(error)
-            alert('Error submitting form')
+            alert('Error submitting form. Please try again.')
         } finally {
             setIsLoading(false)
         }
