@@ -100,7 +100,7 @@ if (file_exists($phpmailer_path)) {
 
         // Recipients
         $mail->setFrom($smtp['from_email'], $smtp['from_name']);
-        $mail->addAddress('savansoftware8@gmail.com', 'Lyrovix Admin');
+        $mail->addAddress('info@lyrovix.com', 'Lyrovix Admin');
 
         // Content
         $mail->isHTML(true);
@@ -108,20 +108,20 @@ if (file_exists($phpmailer_path)) {
         $mail->Body = $template;
 
         $mail->send();
-        echo json_encode(["status" => "success", "message" => "SMTP Email sent successfully to savansoftware8@gmail.com"]);
+        echo json_encode(["status" => "success", "message" => "SMTP Email sent successfully to info@lyrovix.com"]);
     } catch (Exception $e) {
         echo json_encode(["status" => "error", "message" => "SMTP Error: {$mail->ErrorInfo}"]);
     }
 } else {
     // Fallback if PHPMailer is not installed
-    $to = 'savansoftware8@gmail.com';
+    $to = 'info@lyrovix.com';
     $subject = "New Lead Received – $name (Lyrovix Website)";
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: " . $smtp['from_name'] . " <" . $smtp['from_email'] . ">" . "\r\n";
 
     if (mail($to, $subject, $template, $headers)) {
-        echo json_encode(["status" => "success", "message" => "Email sent (System fallback) to savansoftware8@gmail.com. Tip: For better SMTP support, add PHPMailer folder."]);
+        echo json_encode(["status" => "success", "message" => "Email sent (System fallback) to info@lyrovix.com. Tip: For better SMTP support, add PHPMailer folder."]);
     } else {
         echo json_encode(["status" => "error", "message" => "Failed to send. Please add the PHPMailer folder into the php directory for actual SMTP."]);
     }
